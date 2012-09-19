@@ -1,6 +1,6 @@
 package com.zapp.example.zmote;
 
-import com.zapp.example.api.STBAPI;
+import com.zapp.example.api.RemoteSTB;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 
 public class Remote extends Activity {
-	STBAPI api;  
+	RemoteSTB api;  
 	EditText ip;
 	SeekBar vol;
 	
@@ -22,7 +22,7 @@ public class Remote extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_remote);
                 
-        api = new STBAPI();
+        api = new RemoteSTB();
         addListners();
         
         
@@ -51,84 +51,84 @@ public class Remote extends Activity {
         Button menu = (Button) findViewById(R.id.buttonMenu);
         menu.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
-				api.execute(STBAPI.MENU);
+				api.execute(RemoteSTB.MENU);
 			}
 		});
         
         Button back = (Button) findViewById(R.id.buttonBack);
         back.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
-				api.execute(STBAPI.BACK);
+				api.execute(RemoteSTB.BACK);
 			}
 		});
         
         Button exit = (Button) findViewById(R.id.buttonExit);
         exit.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
-				api.execute(STBAPI.EXIT);
+				api.execute(RemoteSTB.EXIT);
 			}
 		});
         
         Button up = (Button) findViewById(R.id.buttonUP);
         up.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
-				api.execute(STBAPI.UP);
+				api.execute(RemoteSTB.UP);
 			}
 		});
         
         Button down = (Button) findViewById(R.id.buttonDOWN);
         down.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
-				api.execute(STBAPI.DOWN);
+				api.execute(RemoteSTB.DOWN);
 			}
 		});
         
         Button left = (Button) findViewById(R.id.buttonLEFT);
         left.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
-				api.execute(STBAPI.LEFT);
+				api.execute(RemoteSTB.LEFT);
 			}
 		});
         
         Button right = (Button) findViewById(R.id.buttonRIGHT);
         right.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
-				api.execute(STBAPI.RIGHT);
+				api.execute(RemoteSTB.RIGHT);
 			}
 		});
         
         Button ok = (Button) findViewById(R.id.buttonOK);
         ok.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
-				api.execute(STBAPI.OK);
+				api.execute(RemoteSTB.OK);
 			}
 		});
         
         Button volup = (Button) findViewById(R.id.buttonVolUp);
         volup.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
-				api.execute(STBAPI.VolUP);
+				api.execute(RemoteSTB.VolUP);
 			}
 		});
         
         Button voldown = (Button) findViewById(R.id.buttonVolDown);
         voldown.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
-				api.execute(STBAPI.VolDOWN);
+				api.execute(RemoteSTB.VolDOWN);
 			}
 		});
         
         Button pageup = (Button) findViewById(R.id.buttonPageUp);
         pageup.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
-				api.execute(STBAPI.PageUP);
+				api.execute(RemoteSTB.PageUP);
 			}
 		});
         
         Button pagedown = (Button) findViewById(R.id.buttonPageDown);
         pagedown.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
-				api.execute(STBAPI.PageDOWN);
+				api.execute(RemoteSTB.PageDOWN);
 			}
 		});
         
@@ -147,9 +147,9 @@ public class Remote extends Activity {
 					public void run() {
 						while(running){
 							if(vol.getProgress() < 50)
-								api.execute(STBAPI.VolDOWN);
+								api.execute(RemoteSTB.VolDOWN);
 							else if(vol.getProgress() > 50)
-								api.execute(STBAPI.VolUP);
+								api.execute(RemoteSTB.VolUP);
 							
 							try {
 								Thread.sleep(500-9*Math.abs(vol.getProgress()-50));
