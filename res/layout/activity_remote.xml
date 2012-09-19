@@ -1,0 +1,159 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/editIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="130.236.248.227" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/buttonOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="174dp"
+        android:text="OK" />
+
+    <Button
+        android:id="@+id/buttonLEFT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonOK"
+        android:layout_alignBottom="@+id/buttonOK"
+        android:layout_toLeftOf="@+id/buttonOK"
+        android:text="L" />
+
+    <Button
+        android:id="@+id/buttonRIGHT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonOK"
+        android:layout_toRightOf="@+id/buttonOK"
+        android:text="R" />
+
+    <Button
+        android:id="@+id/buttonUP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonOK"
+        android:layout_toRightOf="@+id/buttonLEFT"
+        android:text="UP" />
+
+    <Button
+        android:id="@+id/buttonDOWN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonLEFT"
+        android:layout_centerHorizontal="true"
+        android:text="DO" />
+
+    
+    
+    
+    <Button
+        android:id="@+id/buttonPageDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonUP"
+        android:layout_alignParentRight="true"
+        android:text="-" />
+
+    <Button
+        android:id="@+id/buttonVolDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonUP"
+        android:layout_alignParentLeft="true"
+        android:text="-" />
+
+    <Button
+        android:id="@+id/buttonPageUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonPageDown"
+        android:layout_marginBottom="29dp"
+        android:layout_toRightOf="@+id/buttonRIGHT"
+        android:text="+" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonPageDown"
+        android:layout_toRightOf="@+id/editIP"
+        android:text="Page" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonVolDown"
+        android:layout_toLeftOf="@+id/editIP"
+        android:text="Vol" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/buttonDOWN"
+        android:layout_marginTop="23dp"
+        android:text="Back" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonBack"
+        android:layout_alignBottom="@+id/buttonBack"
+        android:layout_alignParentRight="true"
+        android:text="Exit" />
+
+    <Button
+        android:id="@+id/buttonMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonPageUp"
+        android:layout_alignBottom="@+id/buttonPageUp"
+        android:layout_toRightOf="@+id/buttonLEFT"
+        android:text="Menu" />
+
+    <Button
+        android:id="@+id/buttonVolUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonMenu"
+        android:layout_alignBottom="@+id/buttonMenu"
+        android:layout_toLeftOf="@+id/buttonLEFT"
+        android:text="+" />
+
+    <SeekBar
+        android:id="@+id/volBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="22dp" 
+        android:max="100"
+        android:progress="50"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/volBar"
+        android:layout_centerHorizontal="true"
+        android:text="Volum Slider" />
+
+</RelativeLayout>
