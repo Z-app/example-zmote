@@ -3,7 +3,9 @@ package com.zapp.example.zmote;
 import com.zapp.example.api.RemoteSTB;
 
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.app.Activity;
+import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
@@ -16,6 +18,7 @@ public class Remote extends Activity {
 	RemoteSTB api;  
 	EditText ip;
 	SeekBar vol;
+	Vibrator vibe;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,9 @@ public class Remote extends Activity {
     public void addListners(){
     	ip = (EditText)findViewById(R.id.editIP);
     	api.setAddress(ip.getText().toString());
+    	
+    	vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE) ;
+    	
         ip.addTextChangedListener(new TextWatcher() {
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
 				// TODO Auto-generated method stub
@@ -52,6 +58,7 @@ public class Remote extends Activity {
         menu.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
 				api.execute(RemoteSTB.MENU);
+				vibe.vibrate(50);
 			}
 		});
         
@@ -59,6 +66,7 @@ public class Remote extends Activity {
         back.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
 				api.execute(RemoteSTB.BACK);
+				vibe.vibrate(50);
 			}
 		});
         
@@ -66,6 +74,7 @@ public class Remote extends Activity {
         exit.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
 				api.execute(RemoteSTB.EXIT);
+				vibe.vibrate(50);
 			}
 		});
         
@@ -73,6 +82,7 @@ public class Remote extends Activity {
         up.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
 				api.execute(RemoteSTB.UP);
+				vibe.vibrate(50);
 			}
 		});
         
@@ -80,6 +90,7 @@ public class Remote extends Activity {
         down.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
 				api.execute(RemoteSTB.DOWN);
+				vibe.vibrate(50);
 			}
 		});
         
@@ -87,6 +98,7 @@ public class Remote extends Activity {
         left.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
 				api.execute(RemoteSTB.LEFT);
+				vibe.vibrate(50);
 			}
 		});
         
@@ -94,6 +106,7 @@ public class Remote extends Activity {
         right.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
 				api.execute(RemoteSTB.RIGHT);
+				vibe.vibrate(50);
 			}
 		});
         
@@ -101,6 +114,7 @@ public class Remote extends Activity {
         ok.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
 				api.execute(RemoteSTB.OK);
+				vibe.vibrate(50);
 			}
 		});
         
@@ -108,6 +122,7 @@ public class Remote extends Activity {
         volup.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
 				api.execute(RemoteSTB.VolUP);
+				vibe.vibrate(50);
 			}
 		});
         
@@ -115,6 +130,7 @@ public class Remote extends Activity {
         voldown.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
 				api.execute(RemoteSTB.VolDOWN);
+				vibe.vibrate(50);
 			}
 		});
         
@@ -122,6 +138,7 @@ public class Remote extends Activity {
         pageup.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
 				api.execute(RemoteSTB.PageUP);
+				vibe.vibrate(50);
 			}
 		});
         
@@ -129,6 +146,7 @@ public class Remote extends Activity {
         pagedown.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {				
 				api.execute(RemoteSTB.PageDOWN);
+				vibe.vibrate(50);
 			}
 		});
         
@@ -138,6 +156,7 @@ public class Remote extends Activity {
 			public void onStopTrackingTouch(SeekBar seekBar) {
 				vol.setProgress(50);
 				running = false;
+				vibe.vibrate(50);
 			}
 			
 			public void onStartTrackingTouch(SeekBar seekBar) {
