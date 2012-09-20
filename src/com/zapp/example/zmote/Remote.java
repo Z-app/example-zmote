@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +31,28 @@ public class Remote extends Activity {
         
         
     }
+    
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        int action = event.getAction();
+        int keyCode = event.getKeyCode();
+            switch (keyCode) {
+            case KeyEvent.KEYCODE_VOLUME_UP:
+                if (action == KeyEvent.ACTION_UP) {
+                	api.execute(RemoteSTB.VolUP);
+    				vibe.vibrate(50);
+                }
+                return true;
+            case KeyEvent.KEYCODE_VOLUME_DOWN:
+                if (action == KeyEvent.ACTION_DOWN) {
+                	api.execute(RemoteSTB.VolDOWN);
+    				vibe.vibrate(50);
+                }
+                return true;
+            default:
+                return super.dispatchKeyEvent(event);
+            }
+        }
     
     
     public void addListners(){
