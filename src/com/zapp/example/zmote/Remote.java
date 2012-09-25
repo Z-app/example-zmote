@@ -62,15 +62,8 @@ public class Remote extends Activity {
     	vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE) ;
     	
         ip.addTextChangedListener(new TextWatcher() {
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				// TODO Auto-generated method stub
-				
-			}
-			public void beforeTextChanged(CharSequence s, int start, int count,
-					int after) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void onTextChanged(CharSequence s, int start, int before, int count) {}
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 			public void afterTextChanged(Editable s) {
 				api.setAddress(ip.getText().toString());				
 			}
@@ -212,7 +205,6 @@ public class Remote extends Activity {
 			}
 		});
     }
-    
     
 
     @Override
