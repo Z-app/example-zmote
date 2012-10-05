@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 
-public class Remote extends Activity 
+public class Remote extends Activity {
 	RemoteSTB api;  
 	EditText ip;
 	SeekBar vol;
